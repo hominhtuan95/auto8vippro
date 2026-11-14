@@ -1,0 +1,11 @@
+AUTO TRAIN MIL VÀ CỔ MỘ — GIAO DIỆN NỀN NHÂN VẬT
+
+1. Đưa các file Auto_Train_Mil_Co_Mo.py, nhan_vat.png và .github/workflows/build.yml lên GitHub (đúng đường dẫn).
+2. Vào Actions > Build Auto Train Mil va Co Mo EXE > Run workflow.
+3. Tải Artifact, giải nén, chạy Auto_Train_Mil_Co_Mo.exe.
+
+8 ô game độc lập; mỗi ô bật/tắt riêng; Skill 1-8; Tab 3,5 giây, Space 1 giây tự chạy và không có nút hiển thị.
+Chu kỳ Skill: 0,1–10800 giây; tổng thời gian chạy không giới hạn.
+Giao diện 650 x 790 pixel, hình nhân vật đặt giữa và xuyên qua các tấm kính trắng mờ.
+
+LƯU Ý: Phím nền PostMessageW có thể không được một số game nhận; cần thử trên Windows.
