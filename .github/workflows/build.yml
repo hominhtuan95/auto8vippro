@@ -1,0 +1,26 @@
+name: Build Auto Train Mil va Co Mo EXE
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'Auto_Train_Mil_Co_Mo.py'
+      - 'nhan_vat.png'
+      - '.github/workflows/build.yml'
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install pyinstaller pillow numpy
+      - name: Check syntax
+        run: python -m py_compile Auto_Train_Mil_Co_Mo.py
+      - name: Build EXE
+        run: python -m PyInstaller --clean --onefile --windowed --name Auto_Train_Mil_Co_Mo --add-data "nhan_vat.png;." Auto_Train_Mil_Co_Mo.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Auto_Train_Mil_Co_Mo_EXE
+          path: dist/Auto_Train_Mil_Co_Mo.exe
